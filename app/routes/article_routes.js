@@ -54,7 +54,7 @@ router.post('/article', requireToken, (req, res, next) => {
     .catch(next)
 })
 
-// Edit article
+// Edit article; id is article id
 router.patch('/article/:id', requireToken, removeBlanks, (req, res, next) => {
   Art.findById(req.params.id)
     .then(handle404)
@@ -84,8 +84,7 @@ router.patch('/article/:id', requireToken, removeBlanks, (req, res, next) => {
 //     .catch(next)
 // })
 
-// Delete article
-// DELETE /examples/5a7db6c74d55bc51bdf39793
+// Delete article; id is article id
 router.delete('/article/:id', requireToken, (req, res, next) => {
   Art.findById(req.params.id)
     .then(handle404)

@@ -1,7 +1,6 @@
 const mongoose = require('mongoose')
-const commentSchema = require('./comment.js')
 
-const artSchema = new mongoose.Schema({
+const commentSchema = new mongoose.Schema({
   content: {
     type: String,
     required: true
@@ -14,14 +13,11 @@ const artSchema = new mongoose.Schema({
     type: Number,
     min: 0
   },
-  comments: [commentSchema],
   author: {
     type: mongoose.Schema.Types.ObjectId,
     ref: 'User',
     required: true
   }
-}, {
-  timestamps: true
 })
 
-module.exports = mongoose.model('Art', artSchema)
+module.exports = commentSchema
