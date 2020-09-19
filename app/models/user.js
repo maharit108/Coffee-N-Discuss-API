@@ -17,6 +17,9 @@ const userSchema = new mongoose.Schema({
     // remove `hashedPassword` field when we call `.toObject`
     transform: (_doc, user) => {
       delete user.hashedPassword
+      delete user.__v
+      delete user.createdAt
+      delete user.updatedAt
       return user
     }
   }

@@ -25,6 +25,7 @@ router.get('/articles', (req, res, next) => {
 // get article by author id; id here is author id not article id
 router.get('/articles/:id', requireToken, (req, res, next) => {
   let articlesOfAuthor = []
+  console.log(req.user)
   Art.find({author: req.params.id})
     .then(handle404)
     .then(articles => {

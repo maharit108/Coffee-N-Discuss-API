@@ -21,7 +21,21 @@ const artSchema = new mongoose.Schema({
     required: true
   }
 }, {
-  timestamps: true
+  timestamps: true,
+  toObject: {
+    transform: (_doc, article) => {
+      delete article.updatedAt
+      delete article.__v
+      return article
+    }
+  },
+  toJSON: {
+    transform: (_doc, article) => {
+      delete article.updatedAt
+      delete article.__v
+      return article
+    }
+  }
 })
 
 module.exports = mongoose.model('Art', artSchema)
