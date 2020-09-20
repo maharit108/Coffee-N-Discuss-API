@@ -24,22 +24,22 @@ router.get('/articles', (req, res, next) => {
 
 // get article by author id; id here is author id not article id
 router.get('/articles/:id', requireToken, (req, res, next) => {
-  let articlesOfAuthor = []
-  console.log(req.user)
+  let article = []
   Art.find({author: req.params.id})
+    .populate('author')
     .then(handle404)
-    .then(articles => {
-      articles.forEach(article => {
-        requireOwnership(req, article)
-        articlesOfAuthor.push(article)
+    .then(allarticles => {
+      allarticles.forEach(art => {
+        requireOwnership(req, art)
+        article.push(art)
       })
-      return articlesOfAuthor
+      return article
     })
     .then(articletoSend => {
       if (articletoSend.length === 0) {
         res.status(401).send('Not Allowed')
       } else {
-        res.status(200).json({ articlesOfAuthor })
+        res.status(200).json({ article })
       }
     })
     .catch(next)

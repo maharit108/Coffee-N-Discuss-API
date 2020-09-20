@@ -15,6 +15,7 @@ const router = express.Router()
 router.post('/comment/:id', requireToken, (req, res, next) => {
   // changing author field of request to id of current user (user to which the token belongs)
   req.body.comments.author = req.user.id
+  req.body.comments.author_name = req.user.email
   Art.findById(req.params.id)
     .then(handle404)
     .then(article => {

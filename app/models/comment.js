@@ -13,6 +13,9 @@ const commentSchema = new mongoose.Schema({
     type: Number,
     min: 0
   },
+  author_name: {
+    type: String
+  },
   author: {
     type: mongoose.Schema.Types.ObjectId,
     ref: 'User',

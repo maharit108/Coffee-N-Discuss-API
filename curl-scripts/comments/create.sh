@@ -11,7 +11,9 @@ curl "${API}${URL_PATH}/${ID}" \
   --data '{
     "comments": {
       "content":  "'"${CONTENT}"'",
-      "author": "'"${TOKEN}"'"
+      "author": "'"${TOKEN}"'",
+      "author_name": "'"${TOKEN}"'"
+
     }
   }'
 
