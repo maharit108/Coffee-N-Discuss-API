@@ -5,14 +5,6 @@ const commentSchema = new mongoose.Schema({
     type: String,
     required: true
   },
-  upvote: {
-    type: Number,
-    min: 0
-  },
-  downvote: {
-    type: Number,
-    min: 0
-  },
   author_name: {
     type: String
   },

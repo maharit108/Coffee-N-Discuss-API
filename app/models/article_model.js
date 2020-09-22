@@ -6,6 +6,9 @@ const artSchema = new mongoose.Schema({
     type: String,
     required: true
   },
+  voter_name: {
+    type: []
+  },
   upvote: {
     type: Number,
     min: 0

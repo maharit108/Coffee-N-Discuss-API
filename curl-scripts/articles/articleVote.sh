@@ -11,7 +11,8 @@ curl "${API}${URL_PATH}/${ID}" \
   --data '{
     "article": {
       "upvote": "'"${UP}"'",
-      "downvote": "'"${DOWN}"'"
+      "downvote": "'"${DOWN}"'",
+      "voter_name": "'"${VOTENAME}"'"
     }
   }'
 

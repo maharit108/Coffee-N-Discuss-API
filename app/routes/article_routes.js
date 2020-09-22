@@ -48,6 +48,9 @@ router.get('/articles/:id', requireToken, (req, res, next) => {
 // create article
 router.post('/article', requireToken, (req, res, next) => {
   req.body.article.author = req.user.id
+  req.body.article.upvote = 0
+  req.body.article.downvote = 0
+  req.body.article.voter_name = req.user.email
   Art.create(req.body.article)
     .then(content => {
       res.status(201).json({ content: content.toObject() })
@@ -69,21 +72,19 @@ router.patch('/article/:id', requireToken, removeBlanks, (req, res, next) => {
 })
 
 // Upvote/downvote; id is for article
-// router.patch('/articleVote/:id', requireToken, removeBlanks, (req, res, next) => {
-//   Art.findById(req.params.id)
-//     .then(handle404)
-//     .then(article => {
-//       if (article.upvote <= req.body.article.upvote && article.downvote <= req.body.article.downvote) {
-//         article.upvote = req.body.article.upvote
-//         article.downvote = req.body.article.downvote
-//         return article.save()
-//           .then(article => res.status(201).send('Vote Listed'))
-//       } else {
-//         return res.status(400).send('SEND VALID VOTE')
-//       }
-//     })
-//     .catch(next)
-// })
+router.patch('/articleVote/:id', requireToken, (req, res, next) => {
+  Art.findById(req.params.id)
+    .then(handle404)
+    .then(article => {
+      // console.log(article.upvote, req.body.article, req.body.article.voter_name, article.voter_name)
+      article.upvote = req.body.article.upvote
+      article.downvote = req.body.article.downvote
+      article.voter_name.push(req.body.article.voter_name)
+      return article.save()
+        .then(article => res.status(201).send('Vote Listed'))
+    })
+    .catch(next)
+})
 
 // Delete article; id is article id
 router.delete('/article/:id', requireToken, (req, res, next) => {
