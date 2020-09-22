@@ -76,7 +76,6 @@ router.patch('/articleVote/:id', requireToken, (req, res, next) => {
   Art.findById(req.params.id)
     .then(handle404)
     .then(article => {
-      // console.log(article.upvote, req.body.article, req.body.article.voter_name, article.voter_name)
       article.upvote = req.body.article.upvote
       article.downvote = req.body.article.downvote
       article.voter_name.push(req.body.article.voter_name)
