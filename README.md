@@ -39,8 +39,8 @@ Lastly, upvote, downvote and voter_list was added to articles, which basically m
 ___
 ## Unsolved Problems/ Future Upgrades
 This project along with the Front end application interacting with this API was build in the course of a week. Due to time constraints, some features couldn't be added. Some features I would add in the future are:
-Add like/dislike to comments model.
-Add tags to articles model so that articles can be sorted based on the tags (sports, politics, science, programming etc.)
+  - Add like/dislike to comments model.
+  - Add tags to articles model so that articles can be sorted based on the tags (sports, politics, science, programming etc.)
 ___
 ## ERD
 <img src='.\erd.jpg' />
