@@ -4,9 +4,9 @@ This is the back end server for the Coffee-Talks (social media application). API
 
 ## Links
 
-**Deployed Application:** <https://guarded-sea-52498.herokuapp.com>
+**Deployed Application:** <https://guarded-sea-52498.herokuapp.com> + '/URI_from_documenation'
 
-**API Documentations:** <https://github.com/maharit108/Coffee-Talk-API/API_doc.md>
+**API Documentations:** <https://github.com/maharit108/Coffee-Talk-API/blob/master/API_doc.md>
 
 **Front-End Repo:** <https://github.com/maharit108/Coffee-Talk>
 
@@ -43,4 +43,4 @@ Add like/dislike to comments model.
 Add tags to articles model so that articles can be sorted based on the tags (sports, politics, science, programming etc.)
 ___
 ## ERD
-![ERD]('https://github.com/maharit108/Coffee-Talk-API/lib/20200915_224233.jpg')
+![ERD]('https://github.com/maharit108/Coffee-Talk-API/blob/master/lib/20200915_224233.jpg')
