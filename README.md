@@ -13,7 +13,7 @@ This is the back end server for the Coffee-Talks (social media application). API
 **Front End Deployed Site:** <https://maharit108.github.io/Coffee-Talk/>
 
 ## Technologies Used
-  -express framework
+  - express framework
   -mongoose
   -MongoDB
   -node
@@ -28,7 +28,7 @@ Once this MVP was achieved, the application was upgraded so that it now had a th
 Lastly, upvote, downvote and voter_list was added to articles, which basically made it possible to make patch request, adding number of like/deslike to upvote and downvote fields in article model. Voter_list stores the email/username of the user who made the up/downvote so that the user can be limited to make only one vote per article.
 
 ## User Stories
-  -As a client, I would like to be able to make user accounts and sign in (CREATE, GET requests)so that my personal operations can only be done by me.
+  - As a client, I would like to be able to make user accounts and sign in (CREATE, GET requests)so that my personal operations can only be done by me.
   -As a client, I would like to make PATCH request to change passwork and DELETE request to sign out.
   -As a client, I would like to be able to make GET request to show/index my articles.
   -As a client, I would like to make GET request without having to sign in, so that everyone can see my articles, read, like/dislike and comment on them
@@ -43,4 +43,4 @@ Add like/dislike to comments model.
 Add tags to articles model so that articles can be sorted based on the tags (sports, politics, science, programming etc.)
 ___
 ## ERD
-![ERD]('https://github.com/maharit108/Coffee-Talk-API/blob/master/20200915_224233.jpg')
+<img src='.\erd.jpg' />
