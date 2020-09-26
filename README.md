@@ -43,4 +43,4 @@ Add like/dislike to comments model.
 Add tags to articles model so that articles can be sorted based on the tags (sports, politics, science, programming etc.)
 ___
 ## ERD
-![ERD]('./20200915_224233.jpg')
+![ERD]('https://github.com/maharit108/Coffee-Talk-API/blob/master/20200915_224233.jpg')
